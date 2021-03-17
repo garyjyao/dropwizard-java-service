@@ -6,7 +6,7 @@ import com.linecorp.armeria.dropwizard.ArmeriaBundle;
 import com.linecorp.armeria.server.ServerBuilder;
 import dropwizard.java.example.filter.DiagnosticContextFilter;
 import dropwizard.java.example.healthcheck.DefaultHealthCheck;
-import dropwizard.java.example.resource.RootResource;
+import dropwizard.java.example.resource.BuildInfoResource;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -37,7 +37,7 @@ public class ExampleApp extends io.dropwizard.Application<ExampleAppConfig> {
 
     @Override
     public void run(ExampleAppConfig config, Environment env) {
-        env.jersey().register(new RootResource(config.getAppName()));
+        env.jersey().register(new BuildInfoResource(config.getAppName()));
         env.jersey().register(new DiagnosticContextFilter());
         env.healthChecks().register("default", new DefaultHealthCheck());
     }
