@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-@Path("/")
+@Path("/buildInfo")
 @Produces({APPLICATION_JSON})
 public class RootResource {
     private String name;

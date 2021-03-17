@@ -8,7 +8,7 @@ This is an example Dropwizard app using Java.
 Ensure you have Java 8 or later.
 ```
 mvn clean package
-java -jar target/dropwizard-java-example.jar
+java -jar target/dropwizard-java-example.jar server
 ```
 
 ## Running The App Using Docker
