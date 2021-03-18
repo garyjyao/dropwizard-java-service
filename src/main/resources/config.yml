@@ -1,19 +1,16 @@
 appName: dropwizard-java-example
 
 server:
-  applicationConnectors:
-    - type: http
-      port: 8080
-    - type: https
-      port: 8443
-      certAlias: dropwizard-java-example
-      keyStorePath: keystore.pfx
-      keyStorePassword: changeit
-      validateCerts: false
-      supportedProtocols: [TLSv1.2]
-  adminConnectors:
-    - type: http
-      port: 8081
+  type: armeria
+  applicationContextPath: /
+  ports:
+    - port: 8080
+      protocol: HTTP
+    - port: 8443
+      protocol: HTTPS
+  ssl:
+    keyStore: "keystore.pfx"
+    keyStorePassword: "changeit"
 
 logging:
   level: INFO
